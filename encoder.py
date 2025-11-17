@@ -35,6 +35,12 @@ def decode():
         ba[i] ^= ord(key)
     print(bytes(ba))
 
+def showExamples():
+    print("Encode: hello, key = 'a' -> b'\\t\\x04\\r\\r\\x0e'")
+    print("Decode: \\t\\x04\\r\\r\\x0e, key = 'a' -> b'hello'\n")
+
+    print("Encode: tillyctf is the best event ever to be hosted, key = 8 -> b'LQTTA[L^\\x18QK\\x18LP]\\x18Z]KL\\x18]N]VL\\x18]N]J\\x18LW\\x18Z]\\x18PWKL]\\\\'")
+    print('Decode LQTTA[L^\\x18QK\\x18LP]\\x18Z]KL\\x18]N]VL\\x18]N]J\\x18LW\\x18Z]\\x18PWKL]\\\\, key = 8 -> b\'tillyctf is the best event ever to be hosted\'')
 
 def grabInput():
     userInput = input()
@@ -45,6 +51,8 @@ def grabInput():
             encode()
         case '3':
             decode()
+        case '4':
+            showExamples()
         case _:
             print("Invalid Input!")
 

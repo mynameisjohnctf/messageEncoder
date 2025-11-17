@@ -28,6 +28,13 @@ def encode():
         enc[i] = chr(ord(enc[i]) ^ ord(key))
     print(f"Encoded message: {b''.join([s.encode() for s in enc])}")
     
+def decode():
+    enc = input("Enter the encoded values exactly as formatted before, minus the b'' part! \n")
+    ba = bytearray(enc.encode("utf-8").decode("unicode_escape").encode("latin-1"))
+    key = input("Enter your 1 character key.\n")
+    for i in range(len(ba)):
+        ba[i] ^= ord(key)
+    print(bytes(ba))
 
 
 def grabInput():
@@ -37,7 +44,8 @@ def grabInput():
             tutorial()
         case '2':
             encode()
-        
+        case '3':
+            decode()
         case _:
             print("Invalid Input!")
 

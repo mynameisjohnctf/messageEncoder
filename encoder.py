@@ -30,7 +30,11 @@ def encode():
 def decode():
     enc = input("Enter the encoded values exactly as formatted before, minus the b'' part! \n")
     ba = bytearray(enc.encode("utf-8").decode("unicode_escape").encode("latin-1"))
-    key = input("Enter your 1 character key.\n")
+    while True:
+        key = input("Enter a 1 character key:\n")
+        if len(key) == 1:
+            break
+        print("I said 1 character!")
     for i in range(len(ba)):
         ba[i] ^= ord(key)
     print(bytes(ba))
@@ -50,6 +54,7 @@ def showExamples():
 
 def grabInput():
     userInput = input()
+    print()
     match userInput:
         case '1':
             tutorial()
@@ -60,6 +65,7 @@ def grabInput():
         case '4':
             showExamples()
         case '5':
+            print("Thank you for using our product!")
             exit()
         case _:
             print("Invalid Input!")

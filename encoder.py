@@ -1,4 +1,3 @@
-# flag 2/3: _and_git_after
 def printOptions():
     print("Welcome to the message encoder!")
 

@@ -36,11 +36,17 @@ def decode():
     print(bytes(ba))
 
 def showExamples():
+    print("Example 1")
     print("Encode: hello, key = 'a' -> b'\\t\\x04\\r\\r\\x0e'")
-    print("Decode: \\t\\x04\\r\\r\\x0e, key = 'a' -> b'hello'\n")
+    print("Decode: \\t\\x04\\r\\r\\x0e, key is 'a' -> b'hello'\n")
 
-    print("Encode: tillyctf is the best event ever to be hosted, key = 8 -> b'LQTTA[L^\\x18QK\\x18LP]\\x18Z]KL\\x18]N]VL\\x18]N]J\\x18LW\\x18Z]\\x18PWKL]\\\\'")
-    print('Decode LQTTA[L^\\x18QK\\x18LP]\\x18Z]KL\\x18]N]VL\\x18]N]J\\x18LW\\x18Z]\\x18PWKL]\\\\, key = 8 -> b\'tillyctf is the best event ever to be hosted\'')
+    print("Example 2")
+    print("Encode: tillyctf is the best event ever to be hosted, key is '8' -> b'LQTTA[L^\\x18QK\\x18LP]\\x18Z]KL\\x18]N]VL\\x18]N]J\\x18LW\\x18Z]\\x18PWKL]\\\\'")
+    print('Decode LQTTA[L^\\x18QK\\x18LP]\\x18Z]KL\\x18]N]VL\\x18]N]J\\x18LW\\x18Z]\\x18PWKL]\\\\, key = 8 -> b\'tillyctf is the best event ever to be hosted\'\n')
+
+    print('Special flag example')
+    print("Encode: [REDACTED], key= [REDACTED]")
+    print("Decode: &,!\\'`sosz`7!2$3\\x1f#9\"%2#(!2\\'%23=, key is ... wait. I can't tell you that!")
 
 def grabInput():
     userInput = input()
@@ -53,6 +59,8 @@ def grabInput():
             decode()
         case '4':
             showExamples()
+        case '5':
+            exit()
         case _:
             print("Invalid Input!")
 
